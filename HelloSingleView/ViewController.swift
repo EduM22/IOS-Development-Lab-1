@@ -18,6 +18,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func buttonClicked(_ sender: UIButton) {
+        
+        let labelStrings = ["Swift", "C++", "C", "Node.js", "Hello World!", "Python"]
+
+        let randomString = labelStrings.randomElement()
+        
+        mainTextLabel.text = randomString
+        
         print("Hello button")
     }
     
