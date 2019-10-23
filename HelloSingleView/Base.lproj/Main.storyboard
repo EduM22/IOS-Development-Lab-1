@@ -15,35 +15,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptd-bm-cpf">
-                                <rect key="frame" x="165.5" y="428.5" width="83" height="39"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
-                                <state key="normal" title="Click Me"/>
-                                <connections>
-                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WLa-Qp-mKY"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpV-de-ySi">
-                                <rect key="frame" x="207" y="359.5" width="0.0" height="0.0"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Random Text" textAlignment="center" lineBreakMode="characterWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZA4-6v-I1Z">
-                                <rect key="frame" x="89.5" y="191" width="235" height="47"/>
+                                <rect key="frame" x="89.5" y="251" width="235" height="47"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="39"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="nVA-1a-84G">
+                                <rect key="frame" x="44.5" y="348" width="325" height="200"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ptd-bm-cpf">
+                                        <rect key="frame" x="0.0" y="0.0" width="325" height="25"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="25" id="QX8-RE-5Se"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Click Me To Display Random Word"/>
+                                        <connections>
+                                            <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="touchUpInside" id="WLa-Qp-mKY"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IpV-de-ySi">
+                                        <rect key="frame" x="0.0" y="25" width="325" height="136"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UDa-45-G20">
+                                        <rect key="frame" x="0.0" y="161" width="325" height="39"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="39" id="d7s-1Y-AOD"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                        <state key="normal" title="Go to a new screen"/>
+                                        <connections>
+                                            <action selector="newScreenButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="FdU-y9-4U2"/>
+                                            <segue destination="VWE-7b-mcy" kind="popoverPresentation" popoverAnchorView="UDa-45-G20" id="6kF-Gs-avE">
+                                                <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                            </segue>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="IpV-de-ySi" firstAttribute="centerX" secondItem="nVA-1a-84G" secondAttribute="centerX" id="gKI-Tb-jZO"/>
+                                    <constraint firstItem="UDa-45-G20" firstAttribute="centerX" secondItem="nVA-1a-84G" secondAttribute="centerX" id="rfD-pM-nhN"/>
+                                    <constraint firstAttribute="height" constant="200" id="sdp-Lo-6Qr"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="IpV-de-ySi" firstAttribute="centerX" secondItem="ptd-bm-cpf" secondAttribute="centerX" id="21O-8b-eqn"/>
-                            <constraint firstItem="ptd-bm-cpf" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="OWx-ht-6II"/>
-                            <constraint firstItem="ptd-bm-cpf" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="e8T-hu-EZS"/>
-                            <constraint firstItem="IpV-de-ySi" firstAttribute="centerX" secondItem="ZA4-6v-I1Z" secondAttribute="centerX" id="hR3-Mf-e1n"/>
-                            <constraint firstItem="ZA4-6v-I1Z" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="147" id="hWs-GO-Cv7"/>
-                            <constraint firstItem="ptd-bm-cpf" firstAttribute="top" secondItem="IpV-de-ySi" secondAttribute="bottom" constant="69" id="wN1-Le-nnM"/>
+                            <constraint firstItem="nVA-1a-84G" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="AJj-Mt-EbA"/>
+                            <constraint firstItem="nVA-1a-84G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="dTp-dB-h6e"/>
+                            <constraint firstItem="nVA-1a-84G" firstAttribute="top" secondItem="ZA4-6v-I1Z" secondAttribute="bottom" constant="50" id="oxT-K5-eE8"/>
+                            <constraint firstItem="ZA4-6v-I1Z" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="rgb-GX-iHs"/>
+                            <constraint firstItem="nVA-1a-84G" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="tdt-w5-XVb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -53,7 +79,34 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="137.68115942028987" y="118.52678571428571"/>
+            <point key="canvasLocation" x="137.68115942028987" y="118.20652173913044"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="gal-Jw-X2Y">
+            <objects>
+                <viewController id="VWE-7b-mcy" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="EO4-7K-g1J">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World from another screen" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WqF-8I-D5a">
+                                <rect key="frame" x="54.5" y="408" width="305.5" height="26.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="WqF-8I-D5a" firstAttribute="centerY" secondItem="EO4-7K-g1J" secondAttribute="centerY" id="Aya-C6-IDT"/>
+                            <constraint firstItem="WqF-8I-D5a" firstAttribute="centerX" secondItem="EO4-7K-g1J" secondAttribute="centerX" id="NYF-9g-YWX"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="gz2-Bj-4iQ"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zTc-OH-cGZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1016" y="4"/>
         </scene>
     </scenes>
 </document>

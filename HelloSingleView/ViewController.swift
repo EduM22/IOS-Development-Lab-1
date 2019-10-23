@@ -28,5 +28,8 @@ class ViewController: UIViewController {
         print("Hello button")
     }
     
+    @IBAction func newScreenButton(_ sender: UIButton) {
+        //new screen
+    }
 }
 
